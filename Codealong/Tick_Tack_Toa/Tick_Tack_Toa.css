@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f8f9fa; /* Change the background color */
+}
+
+h1 {
+    color: #333;
+}
+
+.players {
+    margin-bottom: 20px;
+}
+
+.players input {
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid #333; /* Change border style */
+    border-radius: 5px; /* Add border radius */
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.board {
+    
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.cell {
+    flex: 1 0 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #fff; /* White background color */
+    border: 5px solid #ddd; /* Light gray border */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+}
+
+.cell.X {
+    color: #e74c3c;
+}
+
+.cell.O {
+    color: #3498db;
+}
+
+.cell.disabled {
+    pointer-events: none;
+    background-color: #ddd;
+}
+
+#player-turn {
+    margin-top: 20px;
+}
