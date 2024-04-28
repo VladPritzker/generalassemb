@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const player1Input = document.getElementById('player1');
     const player2Input = document.getElementById('player2');
     const playerTurn = document.getElementById('player-turn');
+    const PlayerNames = document.getElementById('player-names-buttom');
+
 
     // Disable the game board initially
     const gameBoard = document.getElementById('game-board');
@@ -35,6 +37,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Display the starting player's name
         playerTurn.textContent = `${player1Name}'s Turn`;
+        PlayerNames.innerHTML = `Player 1 - <span style="color: red; font-size: 20px;">${player1Name}</span> vs Player 2 - <span style="color: blue; font-size: 20px;">${player2Name}</span>`;
+
+
+
 
         // Add click event listeners to each cell
         cells.forEach(cell => {
@@ -45,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     cell.textContent = currentPlayer;
                     cell.classList.add(currentPlayer);
                     cell.classList.add('disabled');
+
                     moves++;
 
                     // Check for a winner or tie
@@ -93,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
             winner = null;
             moves = 0;
             playerTurn.textContent = '';    
+            gameBoard.style.display = 'flex;';
         }
     }
 });
